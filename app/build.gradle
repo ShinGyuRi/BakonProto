@@ -16,6 +16,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets.main {
+        jni.srcDirs = []
+        jniLibs.srcDirs "src/main/libs"
+    }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -25,4 +34,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'gun0912.ted:tedpermission:2.2.0'
+    implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation files('libs/armeabi-v7a/libavcodec.so')
+    implementation files('libs/armeabi-v7a/libavfilter.so')
+    implementation files('libs/armeabi-v7a/libavformat.so')
+    implementation files('libs/armeabi-v7a/libavutil.so')
+    implementation files('libs/armeabi-v7a/libavffmpeg.so')
+    implementation files('libs/armeabi-v7a/libswresample.so')
+    implementation files('libs/armeabi-v7a/libswscale.so')
 }
